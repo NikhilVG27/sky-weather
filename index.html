@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SkyCast - Your beautiful live weather dashboard.">
+    <title>SkyCast | Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- HEADER -->
+    <header class="header">
+        <a class="logo" href="#">☁ SKY<span>CAST</span></a>
+
+        <div class="header-actions">
+            <button id="locationBtn" class="icon-button" title="Use my location">📍 My Location</button>
+            <button id="themeToggle" class="icon-button" title="Change theme">☀️ Light Mode</button>
+        </div>
+    </header>
+
+    <!-- SEARCH -->
+    <section class="search-section">
+        <p class="eyebrow">YOUR PERSONAL WEATHER STATION</p>
+        <h1>Weather, <span>beautifully</span> forecast.</h1>
+        <p>Discover the weather anywhere in the world.</p>
+
+        <form id="searchForm">
+            <span class="search-icon">⌕</span>
+            <input id="cityInput" type="text" placeholder="Search city... e.g. Bengaluru" autocomplete="off" required>
+            <button type="submit">Search <span>→</span></button>
+        </form>
+
+        <p id="errorMessage" role="alert"></p>
+    </section>
+
+    <!-- CURRENT WEATHER -->
+    <section class="current-weather">
+        <div class="weather-main">
+            <div class="location-info">
+                <span class="live-label"><span class="live-dot"></span> LIVE WEATHER</span>
+                <h2 id="cityName">Bengaluru</h2>
+                <p id="currentDate">Loading date...</p>
+                <p id="weatherCondition">Getting weather...</p>
+            </div>
+
+            <div class="temperature-section">
+                <div id="weatherIcon" class="weather-icon">🌤️</div>
+                <h1 id="temperature">--°</h1>
+                <p>Feels like <span id="feelsLike">--°</span></p>
+            </div>
+        </div>
+
+        <div class="hero-bottom">
+            <span>Current weather conditions</span>
+            <span id="dayNight">☀️ Daytime</span>
+        </div>
+    </section>
+
+    <!-- WEATHER DETAILS -->
+    <section class="weather-details">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">WEATHER OVERVIEW</p>
+                <h2>Today's Highlights</h2>
+            </div>
+        </div>
+
+        <div class="details-grid">
+            <article class="detail-card">
+                <div class="detail-top"><span>💧</span><span>HUMIDITY</span></div>
+                <h3 id="humidity">--%</h3>
+                <p>Relative humidity</p>
+            </article>
+
+            <article class="detail-card">
+                <div class="detail-top"><span>💨</span><span>WIND SPEED</span></div>
+                <h3 id="windSpeed">-- km/h</h3>
+                <p>Current wind</p>
+            </article>
+
+            <article class="detail-card">
+                <div class="detail-top"><span>🌡️</span><span>PRESSURE</span></div>
+                <h3 id="pressure">-- hPa</h3>
+                <p>Sea-level pressure</p>
+            </article>
+
+            <article class="detail-card">
+                <div class="detail-top"><span>🌧️</span><span>PRECIPITATION</span></div>
+                <h3 id="precipitation">-- mm</h3>
+                <p>Current precipitation</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- HOURLY FORECAST -->
+    <section class="hourly-section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">PLAN YOUR DAY</p>
+                <h2>Next 6 Hours</h2>
+            </div>
+            <span class="section-tag">HOURLY FORECAST</span>
+        </div>
+        <div class="hourly-grid" id="hourlyGrid">
+            <p class="empty-message">Loading hourly forecast...</p>
+        </div>
+    </section>
+
+    <!-- SUNRISE AND SUNSET -->
+    <section class="sun-section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">DAYLIGHT INFORMATION</p>
+                <h2>Sunrise & Sunset</h2>
+            </div>
+        </div>
+
+        <div class="sun-grid">
+            <article class="sun-card">
+                <span class="sun-icon">🌅</span>
+                <div>
+                    <p>Sunrise</p>
+                    <h3 id="sunrise">--:--</h3>
+                </div>
+            </article>
+
+            <article class="sun-card">
+                <span class="sun-icon">🌇</span>
+                <div>
+                    <p>Sunset</p>
+                    <h3 id="sunset">--:--</h3>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- FIVE DAY FORECAST -->
+    <section class="forecast-section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">LOOK AHEAD</p>
+                <h2>5-Day Forecast</h2>
+            </div>
+            <span class="section-tag">DAILY WEATHER</span>
+        </div>
+
+        <div class="forecast-grid" id="forecastGrid">
+            <p class="empty-message">Loading forecast...</p>
+        </div>
+    </section>
+
+    <!-- RECENT SEARCHES -->
+    <section class="recent-section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">QUICK ACCESS</p>
+                <h2>Recent Searches</h2>
+            </div>
+        </div>
+        <div id="recentSearches">
+            <p class="empty-message">Your recent cities will appear here.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>☁ SkyCast Weather Dashboard</p>
+        <p>Weather data powered by Open-Meteo · Made with HTML, CSS & JavaScript</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
